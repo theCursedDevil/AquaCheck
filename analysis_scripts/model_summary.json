@@ -1,0 +1,64 @@
+{
+  "n_obs": 3276,
+  "logit_test_auc": 0.5366921342685371,
+  "logit_pseudo_r2": 0.0013885531121559103,
+  "logit_lr_stat": 4.56281641471287,
+  "logit_lr_pvalue": 0.8706342354608541,
+  "logit_hl_stat": 16.52131125200449,
+  "logit_hl_p": 0.03549807407450079,
+  "max_vif": 1.0390111964189626,
+  "baseline_accuracy": 0.6098901098901099,
+  "candidate_models_test_auc": {
+    "Random Forest": 0.8643223947895791,
+    "XGBoost": 0.8671029559118236,
+    "LightGBM": 0.8701340180360722,
+    "Ensemble (RF+XGB+LGBM)": 0.8719251002004008
+  },
+  "best_model_name": "Ensemble (RF+XGB+LGBM)",
+  "best_model_cv_auc_mean": 0.8702893100726007,
+  "best_model_cv_auc_std": 0.012170745325434105,
+  "best_model_test_auc": 0.8719251002004008,
+  "best_model_test_auc_calibrated": 0.8684901052104208,
+  "brier_raw": 0.1420472777943751,
+  "brier_calibrated": 0.136747292405856,
+  "f1_optimal_threshold": 0.38,
+  "shap_source_model": "LightGBM",
+  "shap_top_features": [
+    "Sulfate",
+    "ph",
+    "Hardness"
+  ],
+  "shap_top_values": [
+    0.8775737492161086,
+    0.48581879616256335,
+    0.10944982405604757
+  ],
+  "best_params": {
+    "Random Forest": {
+      "n_estimators": 200,
+      "min_samples_leaf": 1,
+      "max_features": "log2",
+      "max_depth": 10,
+      "class_weight": "balanced_subsample"
+    },
+    "XGBoost": {
+      "subsample": 0.85,
+      "reg_lambda": 5.0,
+      "n_estimators": 300,
+      "min_child_weight": 10,
+      "max_depth": 3,
+      "learning_rate": 0.03,
+      "colsample_bytree": 0.7
+    },
+    "LightGBM": {
+      "subsample": 0.85,
+      "reg_lambda": 0.5,
+      "num_leaves": 15,
+      "n_estimators": 150,
+      "min_child_samples": 20,
+      "max_depth": -1,
+      "learning_rate": 0.03,
+      "colsample_bytree": 0.85
+    }
+  }
+}
